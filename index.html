@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CITRINE — Extrait de Parfum | 224 STUDIO</title>
+  <meta name="description" content="CITRINE by 224 STUDIO. An extrait de parfum built around bergamot, apple, and cinnamon. Bright. Warm. Unforgettable." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== Loading Screen ========== -->
+  <div class="loader" id="loader" aria-live="polite" aria-label="Loading experience">
+    <span class="loader__brand">224 Studio</span>
+    <div class="loader__progress-track">
+      <div class="loader__progress-bar" id="loaderBar"></div>
+    </div>
+    <span class="loader__percentage" id="loaderPercent">0%</span>
+  </div>
+
+  <!-- ========== Navbar ========== -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <a href="#" class="navbar__logo">224 Studio</a>
+    <ul class="navbar__links">
+      <li><a href="#" class="navbar__link navbar__link--featured">Citrine</a></li>
+      <li><a href="#" class="navbar__link">Notes</a></li>
+      <li><a href="#" class="navbar__link">Story</a></li>
+      <li><a href="#" class="navbar__link">Experience</a></li>
+    </ul>
+    <a href="#" class="navbar__cta">Discover Citrine</a>
+  </nav>
+
+  <!-- ========== Scroll Indicator ========== -->
+  <div class="scroll-indicator" id="scrollIndicator">
+    <span class="scroll-indicator__text">Scroll to explore</span>
+    <div class="scroll-indicator__line"></div>
+  </div>
+
+  <!-- ========== Main Scroll Experience ========== -->
+  <main>
+    <div class="scroll-container" id="scrollContainer">
+
+      <!-- Canvas — sticky full-screen product animation -->
+      <canvas class="product-canvas" id="productCanvas" aria-label="CITRINE perfume bottle cinematic animation"></canvas>
+
+      <!-- ===== Section 1: HERO (0–20%) ===== -->
+      <div class="overlay overlay--hero" id="overlayHero" data-start="0" data-end="0.19">
+        <span class="overlay__eyebrow">Extrait de Parfum &mdash; 224 Studio</span>
+      </div>
+
+      <!-- ===== Section 2: CAP REVEAL (20–35%) ===== -->
+      <div class="overlay overlay--left" id="overlayReveal" data-start="0.20" data-end="0.35">
+        <span class="overlay__eyebrow">The Opening</span>
+        <h2 class="overlay__section-headline">The First<br/>Impression</h2>
+        <p class="overlay__section-body">Fresh bergamot meets crisp apple, opening into a warmer, more intimate character.</p>
+      </div>
+
+      <!-- ===== Section 3: SPRAY EXPERIENCE (35–60%) ===== -->
+      <div class="overlay overlay--right" id="overlaySpray" data-start="0.35" data-end="0.60">
+        <span class="overlay__eyebrow">The Release</span>
+        <h2 class="overlay__section-headline">The Scent,<br/>In Motion</h2>
+        <p class="overlay__section-body">An airy burst of freshness, followed by the warmth of cinnamon.</p>
+      </div>
+
+      <!-- ===== Section 4: FRAGRANCE MIST (65–75%) ===== -->
+      <div class="overlay overlay--center" id="overlayMist" data-start="0.65" data-end="0.75">
+        <span class="overlay__eyebrow">The Signature Notes</span>
+        <h2 class="overlay__section-headline" style="text-align:center;">Bergamot. Apple. Cinnamon.</h2>
+        <div class="overlay__notes">
+          <div class="overlay__note">
+            <div class="overlay__note-name">Bergamot</div>
+            <div class="overlay__note-role">Top Note</div>
+          </div>
+          <div class="overlay__note">
+            <div class="overlay__note-name">Apple</div>
+            <div class="overlay__note-role">Heart Note</div>
+          </div>
+          <div class="overlay__note">
+            <div class="overlay__note-name">Cinnamon</div>
+            <div class="overlay__note-role">Base Note</div>
+          </div>
+        </div>
+        <p class="overlay__section-body" style="text-align:center;">Three notes. One unmistakable signature.</p>
+      </div>
+
+      <!-- ===== Section 5: REASSEMBLY (75–90%) ===== -->
+      <div class="overlay overlay--left" id="overlayReassembly" data-start="0.75" data-end="0.90">
+        <span class="overlay__eyebrow">The Lasting</span>
+        <h2 class="overlay__section-headline">The Signature<br/>Remains</h2>
+        <p class="overlay__section-body">Designed to leave an impression long after the moment.</p>
+      </div>
+
+      <!-- ===== Section 6 removed ===== -->
+    </div>
+  </main>
+
+  <!-- ========== Editorial Tab Section ========== -->
+  <section class="editorial" id="editorial" aria-label="224 Studio — Brand Navigation">
+
+    <!-- Tab Navigation -->
+    <nav class="editorial__nav" role="tablist" aria-label="Content sections">
+      <button
+        class="editorial__tab editorial__tab--active"
+        role="tab"
+        id="tab-story"
+        aria-selected="true"
+        aria-controls="panel-story"
+        data-tab="story"
+      >Brand Story</button>
+      <span class="editorial__divider" aria-hidden="true"></span>
+      <button
+        class="editorial__tab"
+        role="tab"
+        id="tab-philosophy"
+        aria-selected="false"
+        aria-controls="panel-philosophy"
+        data-tab="philosophy"
+      >Philosophy</button>
+      <span class="editorial__divider" aria-hidden="true"></span>
+      <button
+        class="editorial__tab"
+        role="tab"
+        id="tab-collection"
+        aria-selected="false"
+        aria-controls="panel-collection"
+        data-tab="collection"
+      >Collection</button>
+    </nav>
+
+    <!-- Content Panels -->
+    <div class="editorial__panels">
+
+      <!-- Brand Story Panel -->
+      <div
+        class="editorial__panel editorial__panel--active"
+        id="panel-story"
+        role="tabpanel"
+        aria-labelledby="tab-story"
+      >
+        <span class="editorial__panel-eyebrow">Our Story</span>
+        <h2 class="editorial__panel-headline">Every great story<br>begins unexpectedly.</h2>
+        <div class="editorial__panel-body">
+          <p>Ours started with a single fragrance. A few years ago, we stepped into a small perfume boutique that specialized in crafting luxury and niche fragrances. We weren't looking to build a brand—we were simply curious. One fragrance changed everything.</p>
+          <p>It wasn't just the scent that stayed with us. It was the emotion it carried, the memories it awakened, and the realization that something invisible could leave such a lasting impression. That moment sparked an obsession that became <strong>224 Studio</strong>.</p>
+          <p>Today, every fragrance we create is thoughtfully developed for modern sensibilities — precise, intentional, and made to leave a lasting impression long after the moment has passed.</p>
+        </div>
+      </div>
+
+      <!-- Philosophy Panel -->
+      <div
+        class="editorial__panel"
+        id="panel-philosophy"
+        role="tabpanel"
+        aria-labelledby="tab-philosophy"
+        hidden
+      >
+        <span class="editorial__panel-eyebrow">Our Philosophy</span>
+        <h2 class="editorial__panel-headline">Simplicity is<br>the highest form of luxury.</h2>
+        <div class="editorial__panel-body">
+          <p>We believe fragrance is identity. Not an accessory — a signature. The way you smell is the first thing remembered and the last thing forgotten.</p>
+          <p>CITRINE was built on a single conviction: that brightness, warmth, and depth are not opposites. They are three movements of a single, unbroken thought. No excess. No noise. Just intention, refined to its most essential form.</p>
+          <p>Modern perfumery, at its finest, does not compete for attention — it earns it. Quietly. Permanently.</p>
+        </div>
+      </div>
+
+      <!-- Collection Panel -->
+      <div
+        class="editorial__panel"
+        id="panel-collection"
+        role="tabpanel"
+        aria-labelledby="tab-collection"
+        hidden
+      >
+        <span class="editorial__panel-eyebrow">The Collection</span>
+        <h2 class="editorial__panel-headline">CITRINE</h2>
+        <p class="editorial__panel-tagline">Extrait de Parfum &nbsp;&middot;&nbsp; 50 ML</p>
+
+        <div class="editorial__notes-grid">
+          <div class="editorial__note">
+            <span class="editorial__note-tier">Top</span>
+            <span class="editorial__note-name">Bergamot</span>
+          </div>
+          <div class="editorial__note-sep" aria-hidden="true"></div>
+          <div class="editorial__note">
+            <span class="editorial__note-tier">Heart</span>
+            <span class="editorial__note-name">Apple</span>
+          </div>
+          <div class="editorial__note-sep" aria-hidden="true"></div>
+          <div class="editorial__note">
+            <span class="editorial__note-tier">Base</span>
+            <span class="editorial__note-name">Cinnamon</span>
+          </div>
+        </div>
+
+        <a href="#" class="editorial__cta" aria-label="Discover CITRINE fragrance">Discover Citrine</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== Catalogue Section ========== -->
+  <section id="collection-grid" class="catalogue">
+    <div class="catalogue__header">
+      <span class="catalogue__eyebrow">The Collections</span>
+      <h2 class="catalogue__headline">Find Your Signature</h2>
+    </div>
+
+    <!-- Men's Collection -->
+    <div class="catalogue__collection-wrapper">
+      <h3 class="catalogue__collection-title">Men's Collection</h3>
+      <div id="mensGrid" class="catalogue__grid"></div>
+    </div>
+
+    <!-- Women's Collection -->
+    <div class="catalogue__collection-wrapper">
+      <h3 class="catalogue__collection-title">Women's Collection</h3>
+      <div id="womensGrid" class="catalogue__grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== Product Detail Modal ========== -->
+  <div id="productModal" class="product-modal hidden" aria-hidden="true">
+    <div class="product-modal__overlay" id="modalClose"></div>
+    <div class="product-modal__content">
+      <button class="product-modal__close-btn" aria-label="Close modal">✕</button>
+      
+      <div class="product-modal__image-column">
+        <img id="modalImage" src="" alt="Perfume Bottle" />
+      </div>
+
+      <div class="product-modal__info-column">
+        <span id="modalCollection" class="product-modal__collection"></span>
+        <h2 id="modalName" class="product-modal__name"></h2>
+        <p id="modalDesc" class="product-modal__desc"></p>
+
+        <div class="product-modal__notes-grid">
+          <div class="note-box">
+            <span class="note-box__label">Top Notes</span>
+            <span id="modalTop" class="note-box__value"></span>
+          </div>
+          <div class="note-box">
+            <span class="note-box__label">Middle Notes</span>
+            <span id="modalMid" class="note-box__value"></span>
+          </div>
+          <div class="note-box">
+            <span class="note-box__label">Base Notes</span>
+            <span id="modalBase" class="note-box__value"></span>
+          </div>
+        </div>
+
+        <div class="product-modal__purchase-area">
+          <div class="size-selector">
+            <button class="size-option" data-size="30">30ML</button>
+            <button class="size-option active" data-size="50">50ML</button>
+            <button class="size-option" data-size="100">100ML</button>
+          </div>
+          
+          <div class="purchase-action">
+            <div class="price-display">
+              <span class="price-label">Price</span>
+              <span id="modalPrice" class="price-value">₹800</span>
+            </div>
+            <button class="btn-primary">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">224 Studio</div>
+        <p class="footer__tagline">Crafting unforgettable fragrance experiences through precision, artistry, and intention.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#" class="footer__link">Collection</a>
+        <a href="#" class="footer__link">About</a>
+        <a href="#" class="footer__link">Contact</a>
+      </div>
+      <div class="footer__copyright">
+        &copy; 2024 224 Studio. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
